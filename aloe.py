@@ -1,11 +1,13 @@
-import os
-#security token will need updating
-os.system('curl -i "https://api.speciesplus.net/api/v1/taxon_concepts.xml?name=Aloe" -H "X-Authentication-Token:9SbQcSRVXSyuOJdv4yeXigtt" >> aloe.xml')
-os.system('cat aloe.xml')
-#import json
+import requests
 from pprint import pprint
-import untangle
 
-with open('aloe.xml') as data_file:
-    aloe_data = untangle.parse(data_file)
-pprint(aloe_data)
+headers = {
+    'X-Authentication-Token': '9SbQcSRVXSyuOJdv4yeXigtt',
+}
+
+params = (
+    ('name', 'Aloe'),
+)
+data = requests.get('https://api.speciesplus.net/api/v1/taxon_concepts.json?name=Aloe', headers=headers)
+a_data=data.text
+pprint(a_data)
