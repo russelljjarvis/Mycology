@@ -1,7 +1,9 @@
 import requests
 from pprint import pprint
 
+#The authentication token needs refreshing every mont or so.
 headers = {
+    
     'X-Authentication-Token': '9SbQcSRVXSyuOJdv4yeXigtt',
 }
 
@@ -16,6 +18,7 @@ print(identification)
 exec_str=str("data.append(requests.get(")
 print(exec_str)
 
+#Replace string formatting with more explicit formatting.
 exec_str2=str("'https://api.speciesplus.net/api/v1/taxon_concepts.json/:")+str(identification)+str("/distributions',headers=headers))")
 print(exec_str2)
 exec(exec_str+exec_str2)
