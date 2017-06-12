@@ -1,7 +1,7 @@
 import requests
 from pprint import pprint
 
-#The authentication token needs refreshing every mont or so.
+#The authentication token needs refreshing every month or so.
 headers = {
     
     'X-Authentication-Token': '9SbQcSRVXSyuOJdv4yeXigtt',
