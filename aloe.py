@@ -16,15 +16,17 @@ print(identification)
 exec_str=str("data.append(requests.get(")
 print(exec_str)
 
-exec_str2=str("'https://api.speciesplus.net/api/v1/taxon_concepts.json/:")+str(identification)+str("/distributions',headers=headers))")
-print(exec_str2)
-exec(exec_str+exec_str2)
-exec_str2=str("'https://api.speciesplus.net/api/v1/taxon_concepts.json/:")+str(identification)+str("/references',headers=headers))")
-exec(exec_str+exec_str2)
-exec_str2=str("'https://api.speciesplus.net/api/v1/taxon_concepts.json/:")+str(identification)+str("/eu_legislation',headers=headers))")
-exec(exec_str+exec_str2)
-exec_str2=str("'https://api.speciesplus.net/api/v1/taxon_concepts.json/:")+str(identification)+str("/cites_legislation',headers=headers))")
-exec(exec_str+exec_str2)
+exec_instruc='{}{}'.format(exec_str, str("'https://api.speciesplus.net/api/v1/taxon_concepts.json/:")+str(identification)+str("/distributions',headers=headers))"))
+exec(exec_instruc)
+
+exec_instruc='{}{}'.format(exec_str,str("'https://api.speciesplus.net/api/v1/taxon_concepts.json/:")+str(identification)+str("/references',headers=headers))"))
+exec(exec_instruc)
+
+exec_instruc='{}{}'.format(exec_str,str("'https://api.speciesplus.net/api/v1/taxon_concepts.json/:")+str(identification)+str("/eu_legislation',headers=headers))"))
+exec(exec_instruc)
+
+exec_instruc='{}{}'.format(exec_str,str("'https://api.speciesplus.net/api/v1/taxon_concepts.json/:")+str(identification)+str("/cites_legislation',headers=headers))"))
+exec(exec_instruc)
 
 print(len(data))
 for i in data:
